@@ -1,8 +1,8 @@
-import { apiMenu } from "./ApiMenu";
+import { apiStock } from './ApiStock';
 
-export default async function detailsMenu(id_menu) {
+export default async function updateAddAmount(id_item, Addamount) {
     try{
-        const response = await apiMenu.get(`/api/v1/cardapios/${id_menu}`, {
+        const response = await apiStock.patch(`/estoque/${id_item}/quantidade`, Addamount, {
             // headers: {
             //     Authorization: `Bearer ${token}`
             // }

@@ -1,8 +1,8 @@
-import { apiCardapio } from "./ApiCardapio";
+import { apiMenu } from "./ApiMenu";
 
 export default async function deleteMenu(id_menu) {
     try{
-        const response = await apiCardapio.delete(`/api/v1/cardapios/${id_menu}`, {
+        const response = await apiMenu.delete(`/api/v1/cardapios/${id_menu}`, {
             // headers: {
             //     Authorization: `Bearer ${token}`
             // }

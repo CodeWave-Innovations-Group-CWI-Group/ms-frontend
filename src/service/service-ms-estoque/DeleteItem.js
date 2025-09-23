@@ -1,8 +1,8 @@
-import {apiEstoque} from './ApiEstoque'
+import { apiStock } from './ApiStock';
 
 export default async function deleteItem(id_item) {
     try{
-        const response = await apiEstoque.delete(`/estoque/${id_item}`, {
+        const response = await apiStock.delete(`/estoque/${id_item}`, {
             // headers: {
             //     Authorization: `Bearer ${token}`
             // }

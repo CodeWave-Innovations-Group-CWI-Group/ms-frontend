@@ -1,8 +1,8 @@
-import { apiCardapio } from "./ApiCardapio";
+import { apiMenu } from "./ApiMenu";
 
 export default async function createMenu(menuData) {
     try{
-        const response = await apiCardapio.post(`/api/v1/cardapios`, menuData, {
+        const response = await apiMenu.post(`/api/v1/cardapios`, menuData, {
             // headers: {
             //     Authorization: `Bearer ${token}`
             // }

@@ -1,8 +1,8 @@
-import { apiCardapio } from "./ApiCardapio";
+import { apiMenu } from "./ApiMenu";
 
 export default async function listMenuToday(shift) {
     try{
-        const response = await apiCardapio.get(`/api/v1/cardapios/hoje/${shift}`, {
+        const response = await apiMenu.get(`/api/v1/cardapios/hoje?turno=${shift}`, {
             // headers: {
             //     Authorization: `Bearer ${token}`
             // }

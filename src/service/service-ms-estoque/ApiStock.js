@@ -1,5 +1,5 @@
 import axios from "axios";
 
-export const apiEstoque = axios.create({
+export const apiStock = axios.create({
     baseURL: "https://ms-estoque.onrender.com"
 })

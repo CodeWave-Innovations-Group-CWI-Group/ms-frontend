@@ -1,8 +1,8 @@
-import {apiEstoque} from './ApiEstoque'
+import { apiStock } from './ApiStock';
 
 export default async function createItem(item) {
     try{
-        const response = await apiEstoque.post(`/estoque/save`, item, {
+        const response = await apiStock.post(`/estoque/save`, item, {
             // headers: {
             //     Authorization: `Bearer ${token}`
             // }

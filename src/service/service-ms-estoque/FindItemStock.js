@@ -1,8 +1,8 @@
-import {apiEstoque} from './ApiEstoque'
+import { apiStock } from './ApiStock';
 
 export default async function findItemStock(id_item) {
     try{
-        const response = await apiEstoque.get(`/estoque/${id_item}`, {
+        const response = await apiStock.get(`/estoque/${id_item}`, {
             // headers: {
             //     Authorization: `Bearer ${token}`
             // }

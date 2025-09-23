@@ -1,8 +1,8 @@
-import { apiCardapio } from "./ApiCardapio";
+import { apiMenu } from "./ApiMenu";
 
 export default async function updateMenu(id_menu, menuData) {
     try{
-        const response = await apiCardapio.patch(`/api/v1/cardapios/${id_menu}`, menuData, {
+        const response = await apiMenu.patch(`/api/v1/cardapios/${id_menu}`, menuData, {
             // headers: {
             //     Authorization: `Bearer ${token}`
             // }
