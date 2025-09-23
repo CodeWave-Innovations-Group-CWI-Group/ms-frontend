@@ -1,8 +1,8 @@
-import Api from "../service/Api.js";
+import { apiAuth } from "./ApiAuthentication";
 
 export default async function register_admin(name, email, password, course, token) {
     try {
-        const response = await Api.post('/auth/register/admin', {
+        const response = await apiAuth.post('', {
             name: name,
             email: email,
             password: password,

@@ -1,6 +1,8 @@
+import { apiAuth } from "./ApiAuthentication";
+
 export default async function login(email, password) {
     try {
-        const response = await Api.post('/auth/login', {
+        const response = await apiAuth.post('', {
             email: email,
             password: password
         })
