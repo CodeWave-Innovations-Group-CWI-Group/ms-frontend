@@ -1,15 +1,21 @@
 import { apiStock } from './ApiStock';
 
-export default async function updateAddAmount(id_item, Addamount) {
-    try{
-        const response = await apiStock.patch(`/estoque/${id_item}/quantidade`, Addamount, {
-            // headers: {
-            //     Authorization: `Bearer ${token}`
-            // }
-        })
+export default async function updateAddAmount(token, id_item) {
+    try {
+        const response = await apiStock.patch(`/estoque/${id_item}/quantidade`,
+            1
+            ,
+            {
+                headers: {
+                    Authorization: `${token}`,
+                    "Content-Type": "application/json"
+                }
+                
+            })
 
         return response.data;
-    }catch (error) {
+    } catch (error) {
+        console.log(error)
         if (error.response) {
             throw new Error(error.response.data.error);
         } else {
@@ -17,5 +23,3 @@ export default async function updateAddAmount(id_item, Addamount) {
         }
     }
 }
-
-

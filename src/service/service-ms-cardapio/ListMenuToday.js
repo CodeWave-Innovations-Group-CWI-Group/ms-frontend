@@ -3,9 +3,6 @@ import { apiMenu } from "./ApiMenu";
 export default async function listMenuToday(shift) {
     try{
         const response = await apiMenu.get(`/api/v1/cardapios/hoje?turno=${shift}`, {
-            // headers: {
-            //     Authorization: `Bearer ${token}`
-            // }
         })
 
         return response.data;

@@ -1,5 +1,7 @@
 import axios from 'axios'
 
-export const apiRefeicoes = axios.create({
+const apiMeal = axios.create({
     baseURL: "https://ms-registros-de-refeicoes.onrender.com"
 })
+
+export default apiMeal;

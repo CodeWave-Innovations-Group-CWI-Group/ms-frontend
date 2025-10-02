@@ -2,13 +2,15 @@ import { apiAuth } from "./ApiAuthentication";
 
 export default async function login(email, password) {
     try {
-        const response = await apiAuth.post('', {
-            email: email,
+        const response = await apiAuth.post('/auth/login/', {
+            login: email,
             password: password
         })
 
-        const { token } = response.data;
-        return {token};
+        console.log(response)
+
+        const { token, expire_at } = response.data;
+        return {token, expire_at};
     } catch (error) {
         if (error.response) {
             throw new Error(error.response.data.error);

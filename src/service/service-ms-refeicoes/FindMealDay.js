@@ -1,14 +1,14 @@
 import apiMeal from './ApiMeal';
 
-export default async function findMealDay(dayMeal) {
+export default async function findMealDay(token, dayMeal) {
     try{
         const response = await apiMeal.get(`/meal/day/${dayMeal}`, {
-            // headers: {
-            //     Authorization: `Bearer ${token}`
-            // }
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
         })
 
-        return response.data;
+        return response.data.mealsDay;
     }catch (error) {
         if (error.response) {
             throw new Error(error.response.data.error);

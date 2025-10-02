@@ -1,11 +1,11 @@
 import { apiMenu } from "./ApiMenu";
 
-export default async function createMenu(menuData) {
+export default async function createMenu(token, menuData) {
     try{
         const response = await apiMenu.post(`/api/v1/cardapios`, menuData, {
-            // headers: {
-            //     Authorization: `Bearer ${token}`
-            // }
+            headers: {
+                Authorization: `${token}`
+            }
         })
 
         return response.data;

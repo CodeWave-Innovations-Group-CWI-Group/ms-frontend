@@ -1,15 +1,13 @@
-import { apiMenu } from "./ApiMenu";
+import { apiAuth } from "./ApiAuthentication";
 
-export default async function detailsMenu(token, id_menu) {
-    try{
-        const response = await apiMenu.get(`/api/v1/cardapios/${id_menu}`, {
+export default async function logout(token) {
+    try {
+        await apiAuth.post('/auth/logout/', {}, {
             headers: {
                 Authorization: `${token}`
             }
         })
-
-        return response.data;
-    }catch (error) {
+    } catch (error) {
         if (error.response) {
             throw new Error(error.response.data.error);
         } else {
@@ -17,5 +15,3 @@ export default async function detailsMenu(token, id_menu) {
         }
     }
 }
-
-

@@ -1,14 +1,14 @@
 import apiMeal from './ApiMeal';
 
-export default async function findHistoryMeal(id_user) { //depois colocar pra token
+export default async function findHistoryMeal(token) { 
     try{
-        const response = await apiMeal.get(`/meal/user/meals/history/${id_user}`, { //depois tirar dos params pq vai nos headers
-            // headers: {
-            //     Authorization: `Bearer ${token}`
-            // }
+        const response = await apiMeal.get(`/meal/user/meals/history/`, { 
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
         })
 
-        return response.data;
+        return response.data.mealsUser;
     }catch (error) {
         if (error.response) {
             throw new Error(error.response.data.error);

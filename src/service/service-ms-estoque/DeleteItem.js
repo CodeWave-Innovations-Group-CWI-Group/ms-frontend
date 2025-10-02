@@ -1,11 +1,11 @@
 import { apiStock } from './ApiStock';
 
-export default async function deleteItem(id_item) {
+export default async function deleteItem(token, id_item) {
     try{
         const response = await apiStock.delete(`/estoque/${id_item}`, {
-            // headers: {
-            //     Authorization: `Bearer ${token}`
-            // }
+            headers: {
+                Authorization: `${token}`
+            }
         })
 
         return response.data;

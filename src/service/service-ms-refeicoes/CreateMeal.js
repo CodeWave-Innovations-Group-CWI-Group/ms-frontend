@@ -1,11 +1,11 @@
-import apiMeal from './ApiMeal';
+import apiMeal from "./ApiMeal";
 
-export default async function createMeal(id_user, id_menu) { //depois colocar pra token
+export default async function createMeal(token, id_menu, turno) {
     try{
-        const response = await apiMeal.post(`/meal/create `, {id_menu, id_user} ,{
-            // headers: {
-            //     Authorization: `Bearer ${token}`
-            // }
+        const response = await apiMeal.post(`/meal/create`, {menuId: id_menu, shift: turno} ,{
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
         })
 
         return response.data;

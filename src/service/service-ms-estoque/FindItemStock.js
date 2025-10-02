@@ -1,11 +1,11 @@
 import { apiStock } from './ApiStock';
 
-export default async function findItemStock(id_item) {
+export default async function findItemStock(token, id_item) {
     try{
         const response = await apiStock.get(`/estoque/${id_item}`, {
-            // headers: {
-            //     Authorization: `Bearer ${token}`
-            // }
+            headers: {
+                Authorization: `${token}`
+            }
         })
 
         return response.data;
